@@ -168,6 +168,45 @@ style="
 
      <section id="about">
         <h2>About Us</h2>
+
+
+         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    CONTACT
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">CONTACT</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Name</label>
+                <input type="text" class="form-control" id="name" placeholder="your name">
+              </div>
+
+              <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Phone Number</label>
+                <input type="number" class="form-control" id="phone" placeholder="your phone number">
+              </div>
+
+              <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Text</label>
+                <input type="text" class="form-control" id="text" value="I want to book my test!">
+              </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" onclick="gotowhatsapp()" value="Submit">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+         
+         
         <p>Welcome to PubaliHealthCare, where scientific excellence and innovation converge. Established with a passion for pushing the boundaries of knowledge, our laboratory is dedicated to conducting cutting-edge research and fostering a collaborative environment for scientists, researchers, and enthusiasts alike.</p>
 
         <p>At PubaliHealthCare, we believe in the transformative power of science to address complex challenges and improve lives. Our team of dedicated professionals is committed to exploring new frontiers, developing groundbreaking technologies, and contributing to the global scientific community.</p>
@@ -384,8 +423,27 @@ style="
         &copy; 2024 PubaliHealthCare. All Rights Reserved.
     </footer>
 </body>
-
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script>
+
+
+    function gotowhatsapp() {
+
+var name = document.getElementById("name").value;
+var phone = document.getElementById("phone").value;
+var email = document.getElementById("text").value;
+
+var url = "https://wa.me/917638881704?text="
+    + "Name: " + name + "%0a"
+    + "Phone: " + phone + "%0a"
+    + "Text: " + email;
+
+window.open(url, '_blank').focus();
+}
+
+
+    
     let slideIndex = 0;
 showSlides();
 
